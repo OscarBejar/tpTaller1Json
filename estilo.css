@@ -1,0 +1,79 @@
+@font-face {
+  font-family: editores;
+  src: url(Monospace.ttf);
+}
+h1{
+  font-family: editores;
+  align-content: middle;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  
+ /*background-color: rgb(214, 214, 212);
+ */
+ 
+  background-image: url("redh.png");
+
+}
+body {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+/* header styles */
+
+h3 {
+ 
+  text-align: center;
+  background-color: black;
+  border-color: none;
+}
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  background-color: rgb(212, 11, 11);
+  border-color: none;
+  
+}
+
+ p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: black;
+    
+    
+    }
+/* section styles */
+
+section article {
+  width: 33%;
+  float: left;
+}
+
+section p {
+  margin: 5px 0;
+}
+
+section ul {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 3.5rem;
+  letter-spacing: -5px;
+  margin-bottom: 10px;
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Editores</title>
+
+    <link rel="stylesheet" href="estilo.css">
+    <style> h1 { color: rgb(225, 231, 238); } </style>
+    <style> p { color: rgb(225, 231, 238); } </style>    
+    <style> h4 { color: rgb(199, 208, 218); } </style>
+    <style> h3 { color: rgb(225, 231, 238); } </style>
+  </head>
+  <body>
+    <!--Cabecera-->
+    <header>
+    
+    </header>
+    <!--Contenido-->
+    <section>
+
+    </section>
+    <script type="text/javascript">
+      //Manejo a nivel de DOM las etiquetas header y section
+      var cabecera = document.querySelector('header');
+      var section = document.querySelector('section');
+
+      //Solicitud del archivo JSON
+      //Instancio un objeto de tipo XMLHttpRequest
+      var solicitud = new XMLHttpRequest();
+      /*Con ese objeto le indico que la petición
+      será a través del método POST e indico la
+      url del archivo JSON*/
+      solicitud.open('GET','editors.json');
+      //Indico el tipo de respuesta esperada
+      solicitud.responseType = 'json';
+      //Envío la solicitud
+      solicitud.send();
+
+      //Espero confirmación de carga de JSON
+      solicitud.onload = function(){
+        /*Una vez cargado lo paso por parámetro a
+        la funcion poblarCabecera() */
+        var edit = solicitud.response;
+        poblarCabecera(edit);
+        generarContenido(edit);
+      }
+
+      //Función para establecer contenido de la cabecera
+      function poblarCabecera(edit){
+        //Creo una etiqueta de tipo h1
+        var miTitulo = document.createElement('h1');
+        var miSubTitulo = document.createElement('h3');
+        /*Establezco a la etiqueta h1 el valor de la clave
+         titulo del objeto hitos*/
+        miTitulo.textContent = edit['titulo'];
+        miSubTitulo.textContent = edit['subtitulo'];
+        //Le inserto la etiqueta h1 a la cabecera(header)
+        cabecera.appendChild(miTitulo);
+        cabecera.appendChild(miSubTitulo);
+      }
+
+      function generarContenido(edit){
+        for (var i = 0; i < edit['productos'].length; i++) {
+          var producto = document.createElement('article');
+          var miH4 = document.createElement('h4');
+          var imagen = document.createElement('img');
+          var miPara1 = document.createElement('p');
+          var miPara2 = document.createElement('p');
+
+          miH4.textContent = edit['productos'][i].nombre;
+          imagen.src = edit['productos'][i].urlImagen;
+          imagen.width = "250";
+          miPara1.textContent = edit['productos'][i].sistema;
+          miPara2.textContent = edit['productos'][i].tipo;
+
+          producto.appendChild(miH4);
+          producto.appendChild(imagen);
+          producto.appendChild(miPara1);
+          producto.appendChild(miPara2);
+
+          section.appendChild(producto);
+        }
+      }
+
+    </script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "titulo":"Editores",
+  "subtitulo":"Code Line Heroes",
+  "productos":[
+    {
+      "nombre":"VIM",
+      "sistema":"UNIX",
+      "tipo": "Es el editor mas conocido y mas temido de la linea de comandos, es una version mejorada del VI",
+      "urlImagen":"1.jpg"
+    },
+    {
+      "nombre":"Visual Studio Code",
+      "sistema":"Microsoft",
+      "tipo":"Editor que incluye soporte para la depuración, control Git, resaltado de sintaxis, finalización inteligente y refactorización de código",
+      "urlImagen":"2.jpg"
+    },
+    {
+      "nombre":"ATOM",
+      "sistema":"GitHub",
+      "tipo":"Es un editor con soporte para múltiples plug-in Y control de versiones Git integrado",
+      "urlImagen":"logatom.jpg"
+    }
+  ]
+}
